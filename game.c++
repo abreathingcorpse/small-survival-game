@@ -14,11 +14,10 @@ Game::Game() : mWindow(sf::VideoMode(640,480),
                         std::cout << "Iceman.png not found"
                         << std::endl;
                     }
+                    std::cout << "Max. Texture size: "
+                    << sf::Texture::getMaximumSize() << std::endl;
                     mPlayer.setTexture(mTexture);
                     mPlayer.setPosition(100.f, 100.f);
-//                    mPlayer.setSize(sf::Vector2f(50,100));
-//                    mPlayer.setFillColor(sf::Color::Cyan);
-//                    mPlayer.setPosition(100,100);
                 } // {} is the function body
 
 void Game::handlePlayerInput(sf::Keyboard::Key key,
