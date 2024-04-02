@@ -5,10 +5,20 @@
 // Constructor Initializer List
 Game::Game() : mWindow(sf::VideoMode(640,480),
                         "The Dark Side of this Planet"),
+                mTexture(),
                 mPlayer() {
-                    mPlayer.setSize(sf::Vector2f(50,100));
-                    mPlayer.setFillColor(sf::Color::Cyan);
-                    mPlayer.setPosition(100,100);
+                    // Loads the texture from path and if it fails
+                    // it prints an error on the terminal 
+                    if (!mTexture.loadFromFile("Iceman.png"))
+                    {
+                        std::cout << "Iceman.png not found"
+                        << std::endl;
+                    }
+                    mPlayer.setTexture(mTexture);
+                    mPlayer.setPosition(100.f, 100.f);
+//                    mPlayer.setSize(sf::Vector2f(50,100));
+//                    mPlayer.setFillColor(sf::Color::Cyan);
+//                    mPlayer.setPosition(100,100);
                 } // {} is the function body
 
 void Game::handlePlayerInput(sf::Keyboard::Key key,

@@ -15,7 +15,9 @@ class Game {
 
         // Private members
         sf::RenderWindow mWindow;
-        sf::RectangleShape mPlayer;
+        sf::Texture mTexture;
+        sf::Sprite mPlayer;
+//        sf::RectangleShape mPlayer;
         // Defined outside of a funcion so they should be
         // initialized to false
         bool mIsMovingUp;
