@@ -1,5 +1,5 @@
 #include <SFML/Graphics.hpp>
-#include "game.h++"
+#include "Game.h++"
 #include <iostream>
 
 // Constructor Initializer List
@@ -14,8 +14,6 @@ Game::Game() : mWindow(sf::VideoMode(640,480),
                         std::cout << "Iceman.png not found"
                         << std::endl;
                     }
-                    std::cout << "Max. Texture size: "
-                    << sf::Texture::getMaximumSize() << std::endl;
                     mPlayer.setTexture(mTexture);
                     mPlayer.setPosition(100.f, 100.f);
                 } // {} is the function body
@@ -56,7 +54,7 @@ void Game::processEvents() {
 
 void Game::update(sf::Time elapsedTime) {
     sf::Vector2f movement(0.f, 0.f);
-    const float unitaryVel = 40000.f;
+    const float unitaryVel = 20000.f;
     // By using if instead of else if, it takes into account more
     // than one key being pressed
     if (mIsMovingUp)
