@@ -1,5 +1,6 @@
-#ifndef GAME_H // GAME_H header guard
+#ifndef GAME_H // Header guard
 #define GAME_H
+#include "TextureHolder.h++"
 
 class Game {
     public:
@@ -15,7 +16,8 @@ class Game {
 
         // Private members
         sf::RenderWindow mWindow;
-        sf::Texture mTexture;
+        TextureHolder mTextures;
+//        sf::Texture mTexture;
         sf::Sprite mPlayer;
 //        sf::RectangleShape mPlayer;
         // Defined outside of a funcion so they should be

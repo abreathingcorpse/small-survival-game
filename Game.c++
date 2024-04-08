@@ -1,20 +1,25 @@
 #include <SFML/Graphics.hpp>
 #include "Game.h++"
+#include "TextureHolder.h++"
 #include <iostream>
 
 // Constructor Initializer List
 Game::Game() : mWindow(sf::VideoMode(640,480),
                         "The Dark Side of this Planet"),
-                mTexture(),
+                mTextures(),
                 mPlayer() {
+                    mTextures.load(Textures::PLAYER,
+                                "Iceman.png");
+                    mPlayer.setTexture(mTextures.get(Textures::PLAYER));
                     // Loads the texture from path and if it fails
                     // it prints an error on the terminal 
-                    if (!mTexture.loadFromFile("Iceman.png"))
+/*                    if (!mTexture.loadFromFile("Iceman.png"))
                     {
                         std::cout << "Iceman.png not found"
                         << std::endl;
                     }
                     mPlayer.setTexture(mTexture);
+                    */
                     mPlayer.setPosition(100.f, 100.f);
                 } // {} is the function body
 
